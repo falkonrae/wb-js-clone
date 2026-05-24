@@ -143,7 +143,7 @@
             <div class="col-3 d-flex justify-content-end">
                 <!--                 <a href="#" class="more">View All</a>
  -->
-                <NuxtLink :to="{ path: '/products', query: { field: 'label', name: 'New' }}" class="more">
+                <NuxtLink :to="{ path: '/products', query: { field: 'label', name: 'New' } }" class="more">
                     View All
                 </NuxtLink>
             </div>
@@ -151,8 +151,7 @@
         </div>
         <!-- /.row -->
         <div class="short-goods row">
-            <div class="col-lg-3 col-sm-6"
-                v-for="card in (data || [])">
+            <div class="col-lg-3 col-sm-6" v-for="card in data" :key="card.id">
                 <div class="goods-card">
                     <span class="label">{{ card.label.toUpperCase() }}</span>
                     <img :src="card.img" alt="card.name" class="goods-image">
@@ -170,5 +169,4 @@
 
 <script setup>
 const { data } = await useFetch('/api/new-products')
-console.log(data);
 </script>
