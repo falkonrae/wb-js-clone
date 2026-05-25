@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-lg-2 col-6 d-flex justify-content-end">
-                <button class="button button-cart">
+                <button class="button button-cart" @click="openCart()">
                     <img class="button-icon" src="/images/cart.svg" alt="icon: cart">
                     <span class="button-text">Cart</span>
                     <span class="button-text cart-count"></span>
@@ -39,14 +39,20 @@
 </template>
 
 <script setup>
+const viewCart = useViewCart()
+
 let links = ref([
-        { id: 0, route: { path: '/products', query: { field: 'gender', name: 'Womens' } }, text: 'Womens' },
-        { id: 1, route: { path: '/products', query: { field: 'gender', name: 'Mens' } }, text: 'Mens' },
-        { id: 2, route: { path: '/products', query: { field: 'category', name: 'Clothing' } }, text: 'Clothing' },
-        { id: 3, route: { path: '/products', query: { field: 'category', name: 'Accessories' } }, text: 'Accessories' },
-        { id: 4, route: { path: '/products', query: { field: 'category', name: 'Shoes' } }, text: 'Shoes' },
-        { id: 5, route: { path: '/products' }, text: 'All' }
-    ]
+    { id: 0, route: { path: '/products', query: { field: 'gender', name: 'Womens' } }, text: 'Womens' },
+    { id: 1, route: { path: '/products', query: { field: 'gender', name: 'Mens' } }, text: 'Mens' },
+    { id: 2, route: { path: '/products', query: { field: 'category', name: 'Clothing' } }, text: 'Clothing' },
+    { id: 3, route: { path: '/products', query: { field: 'category', name: 'Accessories' } }, text: 'Accessories' },
+    { id: 4, route: { path: '/products', query: { field: 'category', name: 'Shoes' } }, text: 'Shoes' },
+    { id: 5, route: { path: '/products' }, text: 'All' }
+]
 )
 
+const openCart = () => {
+    viewCart.value = true
+
+}
 </script>

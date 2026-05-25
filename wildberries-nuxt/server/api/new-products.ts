@@ -9,7 +9,3 @@ export default defineEventHandler(async (event) => {
     if (!products) return []
     return getNewProducts(products)
 })
-
-
-
-

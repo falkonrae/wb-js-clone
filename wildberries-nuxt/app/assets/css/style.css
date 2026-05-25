@@ -417,7 +417,7 @@ button {
     margin-bottom: 15px;
 }
 
-.cart-table th,
+.cart-table th:not(.cart-empty-text),
 .cart-table td {
     text-align: left;
     border: 1px solid black
@@ -431,6 +431,10 @@ button {
     height: 40px;
 }
 
+.cart-empty-text {
+    text-align: center;
+    height: 50px;
+}
 
 .mw-160 {
     max-width: 160px;
